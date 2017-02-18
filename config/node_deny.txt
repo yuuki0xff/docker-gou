@@ -1,0 +1,26 @@
+#
+# List of nodes that are not allowed to add link_nodes or search_nodes.
+# Copyright (c) 2006 shinGETsu Project.
+#
+# Write one regexp per one line.
+# The regexp is tested for a node string.
+#
+# Example:
+#    ^192.168
+#    ^example\.com:8000/server\.cgi$
+#
+# $Id$
+#
+
+# Loopback IP address
+^127\.\d+\.\d+\.\d+$
+
+# Private IP address
+^10\.\d+\.\d+\.\d+$
+^172\.1[6-9]\.\d+\.\d+$
+^172\.2[0-9]\.\d+\.\d+$
+^172\.3[0-1]\.\d+\.\d+$
+^192\.168\.\d+\.\d+$
+
+# Init node
+^bbs\.shingetsu\.info$

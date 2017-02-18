@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu
+
+mkdir -p /srv/{log,file,run}
+if [[ -w /srv/file ]]; then
+	cp -n /opt/gou/default_config/* /srv/file/ || :
+fi
+# Note: /srv/file/ はread-onlyになっている可能性があるため、owner/groupの変更でエラーが発生しても無視する。
+chown -R 1000:1000 /srv/file || :
+chown -R 1000:1000 /srv/{log,run}
+exec /opt/gosu 1000:1000 /opt/gou/shingetsu-gou
