@@ -3,7 +3,7 @@ EXPOSE 8000
 VOLUME /srv
 WORKDIR /srv
 ENV GOSU_VERSION="1.10" \
-    GOU_VERSION="v0.2.7"
+    GOU_VERSION="v0.2.8"
 
 COPY entrypoint /opt/
 COPY config /opt/gou/default_config
